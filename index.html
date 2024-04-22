@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cadastro de Livros Resgatados</h1>
+    <h1>Livros Resgatados</h1>
 
     <form id="formulario">
         <label for="titulo">Título:</label>
@@ -35,11 +35,16 @@
             <option value="danificado">Danificado</option>
         </select><br><br>
 
+        <label for="editora">Editora:</label>
+        <input type="text" id="editora" name="editora" required><br><br>
+
         <label for="nomeDoador">Nome do Doador:</label>
         <input type="text" id="nomeDoador" name="nomeDoador"><br><br>
 
         <label for="contatoDoador">Contato do Doador:</label>
         <input type="text" id="contatoDoador" name="contatoDoador"><br><br>
+
+
 
         <button type="submit">Cadastrar</button>
     </form>
