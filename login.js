@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   var password = document.getElementById('password').value;
 
   if (username === 'user' && password === 'pass') {
-    window.location.href = 'index.html'
+    window.location.href = 'consultar.html'
   } else {
     document.getElementById('message').innerText = 'Invalid username or password.';
     document.getElementById('message').style.color = '#dc3545';
