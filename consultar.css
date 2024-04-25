@@ -1,0 +1,20 @@
+.livros-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.livros-table th, .livros-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.livros-table th {
+    background-color: #f2f2f2;
+}
+
+.livros-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+h1{
+    color: #0f6128;
+}

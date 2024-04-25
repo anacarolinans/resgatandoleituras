@@ -10,24 +10,26 @@ formulario.addEventListener('submit', function(event) {
   const nomeDoador = document.getElementById('nomeDoador').value;
   const contatoDoador = document.getElementById('contatoDoador').value;
 
-  // Validação opcional (evita envio de dados incompletos)
-  if (titulo === '' || autor === '' || genero === '' || estado === '') {
-    alert('Preencha todos os campos obrigatórios!');
-    return; // Interrompe a execução do código caso a validação falhe
-  }
+  // Salvar os dados no localStorage
+  const livro = {
+    titulo: titulo,
+    autor: autor,
+    genero: genero,
+    estado: estado,
+    nomeDoador: nomeDoador,
+    contatoDoador: contatoDoador
+  };
 
-  // Exibir dados no console para fins de demonstração
-  console.log('Livro cadastrado:');
-  console.log('Título:', titulo);
-  console.log('Autor:', autor);
-  console.log('Gênero:', genero);
-  console.log('Estado:', estado);
-  console.log('Nome do Doador:', nomeDoador);
-  console.log('Contato do Doador:', contatoDoador);
+  // Verificar se já existe algum dado no localStorage
+  let livrosCadastrados = JSON.parse(localStorage.getItem('livrosCadastrados')) || [];
+  livrosCadastrados.push(livro);
 
-  // Implemente aqui a lógica para salvar os dados do formulário
-  // Exemplos: salvar em banco de dados local, enviar para um servidor, etc.
-  // ...
+  // Salvar os dados atualizados no localStorage
+  localStorage.setItem('livrosCadastrados', JSON.stringify(livrosCadastrados));
 
+  // Exibir mensagem de sucesso
   alert('Livro cadastrado com sucesso!');
+
+  // Limpar o formulário após o cadastro
+  formulario.reset();
 });
